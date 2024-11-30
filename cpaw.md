@@ -1,11 +1,31 @@
 # CPAW implementation
 
-## Resource stockage
+## Value
 
-First thing, we'll put into place the data structures to stock our resources.
+The values in a packge can either be a keyword, an integer or a nil.
 
 ```janet
-(pp "test core")
+(defn cpaw-value? [value]
+  (or (keyword? value) (int? value) (nil? value)))
+```
+
+## Resource creation
+
+Here, we'll define how to create the resources.
+
+```janet
+(defn pkg [name &opt obj rel sub]
+  (assert
+    (and (keyword? name)
+         (cpaw-value? obj)
+         (cpaw-value? rel)
+         (cpaw-value? sub)))
+  [:pkg name obj rel sub])
+
+(defn container [name]
+  (assert (keyword? name))
+  @{:internal @[]
+    :push (fn [self v] (array/push (self :internal) v))})
 ```
 
 ## Core
