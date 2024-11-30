@@ -10,6 +10,8 @@ CPAW is an abstract machine inspired by SECD, Join-Calculus, and Rewriting Syste
 
 The implementation is in [this IMD notebook](./cpaw.md).
 
+[IMD is a simple notebook format](https://github.com/florianfmmartin/imd).
+
 ## Concepts
 
 ### Packages
