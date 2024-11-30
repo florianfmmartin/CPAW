@@ -6,6 +6,10 @@ Contained Packages Assembled by Workers
 
 CPAW is an abstract machine inspired by SECD, Join-Calculus, and Rewriting Systems.
 
+## Implementation
+
+The implementation is in [this IMD notebook](./cpaw.md).
+
 ## Concepts
 
 ### Packages
